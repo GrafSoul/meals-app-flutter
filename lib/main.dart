@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import './categories_screen.dart';
@@ -17,6 +15,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
               .copyWith(secondary: Colors.amber),
           canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+          primaryColor:  Colors.pink,
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
                 bodyText1: const TextStyle(
