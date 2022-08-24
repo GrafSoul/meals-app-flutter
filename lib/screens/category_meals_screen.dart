@@ -16,7 +16,7 @@ class CategoryMealsScreen extends StatefulWidget {
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   late dynamic categoryTitle;
   late List<Meal> displayedMeals;
-  var _loadedInitDate = false;
+  bool _loadedInitDate = false;
 
   @override
   void didChangeDependencies() {
