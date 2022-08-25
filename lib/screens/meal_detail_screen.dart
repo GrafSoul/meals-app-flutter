@@ -5,7 +5,12 @@ import '../data/dummy_data.dart';
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
 
-  const MealDetailScreen({Key? key}) : super(key: key);
+  final Function toogleFavorite;
+  final Function isFavorite;
+
+  const MealDetailScreen(
+      {Key? key, required this.toogleFavorite, required this.isFavorite})
+      : super(key: key);
 
   Widget buildSectionTitle(BuildContext context, String title) {
     return Container(
@@ -88,10 +93,8 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: (FloatingActionButton(
-        child: const Icon(Icons.delete),
-        onPressed: () {
-          Navigator.of(context).pop(mealId);
-        },
+        onPressed: () => toogleFavorite(mealId),
+        child: Icon(isFavorite(mealId) ? Icons.star : Icons.star_border),
       )),
     );
   }
